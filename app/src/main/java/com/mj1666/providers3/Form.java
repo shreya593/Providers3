@@ -8,8 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -37,13 +40,14 @@ import javax.annotation.Nonnull;
 
 import type.CreateTodoInput;
 
-public class Form extends AppCompatActivity {
-    EditText name, phoneNo,address,pincode,occupation;
+public class Form extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    EditText name, phoneNo,address,pincode;
     Button submit;
     Location currentLocation;
     private AWSAppSyncClient mAWSAppSyncClient;
     FusedLocationProviderClient fusedLocationProviderClient;
-    String latitude,longitude;
+    String latitude,longitude,occ;
+    Spinner occupation;
 
     private static final int REQUEST_CODE = 101;
     @Override
@@ -56,6 +60,10 @@ public class Form extends AppCompatActivity {
 
         pincode = findViewById(R.id.pin);
         occupation = findViewById(R.id.occ);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.Occupation,android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        occupation.setAdapter(adapter);
+        occupation.setOnItemSelectedListener(this);
         submit = findViewById(R.id.button3);
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         fetchLocation();
@@ -73,7 +81,7 @@ public class Form extends AppCompatActivity {
 String sid = AWSMobileClient.getInstance().getIdentityId();
                 CreateTodoInput createTodoInput = CreateTodoInput.builder().
                         name(name.getText().toString()).
-                        phoneNo(phoneNo.getText().toString()).occupation(occupation.getText().toString().toLowerCase()).latitude(latitude).longitude(longitude).sid(sid).
+                        phoneNo(phoneNo.getText().toString()).occupation(occ).latitude(latitude).longitude(longitude).sid(sid).address(address.getText().toString()).
                         build();
 
 
@@ -130,5 +138,16 @@ String sid = AWSMobileClient.getInstance().getIdentityId();
                 }
                 break;
         }
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+         occ= parent.getItemAtPosition(position).toString();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
     }
 }

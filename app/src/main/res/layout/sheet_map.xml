@@ -147,7 +147,8 @@
                             android:layout_height="?attr/actionBarSize"
                             android:background="@android:color/transparent"
                             android:tint="@color/grey_20"
-                            app:srcCompat="@drawable/ic_phone" />
+                            app:srcCompat="@drawable/ic_phone"
+                            android:id="@+id/callnow"/>
 
                         <View
                             android:layout_width="@dimen/spacing_mxlarge"
@@ -170,27 +171,35 @@
                         android:gravity="center_vertical"
                         android:orientation="horizontal">
 
-                        <ImageButton
-                            android:layout_width="wrap_content"
-                            android:layout_height="?attr/actionBarSize"
-                            android:background="@android:color/transparent"
-                            android:tint="@color/grey_20"
-                            app:srcCompat="@drawable/ic_schedule" />
-
-                        <View
-                            android:layout_width="@dimen/spacing_mxlarge"
-                            android:layout_height="0dp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center_vertical"
-                            android:text="Wed, 10 AM - 9 PM"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                            android:textColor="@color/grey_90" />
-
                     </LinearLayout>
 
+                    <TextView
+                        android:id="@+id/choose"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="YOU WANT TO HIRE ??"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                        android:textColor="@color/grey_90"
+                        />
+
+                    <Button
+                        android:id="@+id/yes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#C1EAF0"
+                        android:text="YES" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rr"/>
+                    <Button
+                        android:id="@+id/no"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#C1EAF0"
+                        android:text="NO" />
                 </LinearLayout>
 
             </LinearLayout>

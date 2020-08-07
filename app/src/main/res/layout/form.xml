@@ -70,21 +70,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add" />
 
-    <EditText
-        android:id="@+id/occ"
-        android:layout_width="276dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="67dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="68dp"
-        android:background="#ffffff"
-        android:ems="10"
-        android:hint="Occupation"
-        android:inputType="textPersonName"
-        android:textColorHint="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pin" />
+
 
     <TextView
         android:id="@+id/textView"
@@ -96,14 +82,15 @@
         android:background="@drawable/logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"> </TextView>
+
 
     <Button
         android:id="@+id/button3"
         android:layout_width="289dp"
         android:layout_height="59dp"
         android:layout_marginStart="62dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="7dp"
         android:layout_marginEnd="60dp"
         android:background="@color/colorPrimary"
         android:text="Submit"
@@ -111,4 +98,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/occ" />
+
+    <Spinner
+
+        android:id="@+id/occ"
+        android:layout_width="275dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="67dp"
+        android:background="#ffffff"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pin" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

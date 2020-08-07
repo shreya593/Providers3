@@ -8,4 +8,10 @@
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
         AIzaSyC3SrcUtXXXXXXXXXXXXXXXXXXXXXX
     </string>
+    <string-array name="Occupation">
+        <item>Choose your occupation</item>
+        <item>Electrician</item>
+        <item>Cook</item>
+        <item>Plumber</item>
+    </string-array>
 </resources>

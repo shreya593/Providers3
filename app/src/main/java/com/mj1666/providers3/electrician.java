@@ -15,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -93,6 +94,7 @@ TextView workername;
         ratingBar=view.findViewById(R.id.ratingnum);
         phone=view.findViewById(R.id.phonenum);
         jobs=view.findViewById(R.id.orders);
+
         initComponent();
 
         return view;
@@ -219,6 +221,14 @@ if (locationList.get(i).getOccupation().equals("electrician")) {
         bottomSheetBehavior.setBottomSheetCallback(new BottomSheetBehavior.BottomSheetCallback() {
             @Override
             public void onStateChanged(@NonNull View bottomSheet, int newState) {
+phone.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+        Intent i=new Intent(Intent.ACTION_DIAL);
+        i.setData(Uri.parse("tel:"+number));
+        startActivity(i);
+    }
+});
 
             }
 
